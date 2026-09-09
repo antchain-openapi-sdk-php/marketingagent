@@ -1,13 +1,109 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\MARKETINGAGENT\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetComsumeJdRequest extends Model
-{
+class GetComsumeJdRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'projectId' => 'project_id',
+        'userId' => 'user_id',
+        'couponId' => 'coupon_id',
+        'prizeStatus' => 'prize_status',
+        'consumeTime' => 'consume_time',
+        'writeOffType' => 'write_off_type',
+        'bankFlowNo' => 'bank_flow_no',
+        'transactionId' => 'transaction_id',
+        'tradeAmount' => 'trade_amount',
+        'merchantNo' => 'merchant_no',
+    ];
+    public function validate() {
+        Model::validateRequired('projectId', $this->projectId, true);
+        Model::validateRequired('userId', $this->userId, true);
+        Model::validateRequired('couponId', $this->couponId, true);
+        Model::validateRequired('prizeStatus', $this->prizeStatus, true);
+        Model::validateRequired('writeOffType', $this->writeOffType, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->projectId) {
+            $res['project_id'] = $this->projectId;
+        }
+        if (null !== $this->userId) {
+            $res['user_id'] = $this->userId;
+        }
+        if (null !== $this->couponId) {
+            $res['coupon_id'] = $this->couponId;
+        }
+        if (null !== $this->prizeStatus) {
+            $res['prize_status'] = $this->prizeStatus;
+        }
+        if (null !== $this->consumeTime) {
+            $res['consume_time'] = $this->consumeTime;
+        }
+        if (null !== $this->writeOffType) {
+            $res['write_off_type'] = $this->writeOffType;
+        }
+        if (null !== $this->bankFlowNo) {
+            $res['bank_flow_no'] = $this->bankFlowNo;
+        }
+        if (null !== $this->transactionId) {
+            $res['transaction_id'] = $this->transactionId;
+        }
+        if (null !== $this->tradeAmount) {
+            $res['trade_amount'] = $this->tradeAmount;
+        }
+        if (null !== $this->merchantNo) {
+            $res['merchant_no'] = $this->merchantNo;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return GetComsumeJdRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['project_id'])){
+            $model->projectId = $map['project_id'];
+        }
+        if(isset($map['user_id'])){
+            $model->userId = $map['user_id'];
+        }
+        if(isset($map['coupon_id'])){
+            $model->couponId = $map['coupon_id'];
+        }
+        if(isset($map['prize_status'])){
+            $model->prizeStatus = $map['prize_status'];
+        }
+        if(isset($map['consume_time'])){
+            $model->consumeTime = $map['consume_time'];
+        }
+        if(isset($map['write_off_type'])){
+            $model->writeOffType = $map['write_off_type'];
+        }
+        if(isset($map['bank_flow_no'])){
+            $model->bankFlowNo = $map['bank_flow_no'];
+        }
+        if(isset($map['transaction_id'])){
+            $model->transactionId = $map['transaction_id'];
+        }
+        if(isset($map['trade_amount'])){
+            $model->tradeAmount = $map['trade_amount'];
+        }
+        if(isset($map['merchant_no'])){
+            $model->merchantNo = $map['merchant_no'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -79,111 +175,5 @@ class GetComsumeJdRequest extends Model
      * @var string
      */
     public $merchantNo;
-    protected $_name = [
-        'authToken'     => 'auth_token',
-        'projectId'     => 'project_id',
-        'userId'        => 'user_id',
-        'couponId'      => 'coupon_id',
-        'prizeStatus'   => 'prize_status',
-        'consumeTime'   => 'consume_time',
-        'writeOffType'  => 'write_off_type',
-        'bankFlowNo'    => 'bank_flow_no',
-        'transactionId' => 'transaction_id',
-        'tradeAmount'   => 'trade_amount',
-        'merchantNo'    => 'merchant_no',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('projectId', $this->projectId, true);
-        Model::validateRequired('userId', $this->userId, true);
-        Model::validateRequired('couponId', $this->couponId, true);
-        Model::validateRequired('prizeStatus', $this->prizeStatus, true);
-        Model::validateRequired('writeOffType', $this->writeOffType, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->projectId) {
-            $res['project_id'] = $this->projectId;
-        }
-        if (null !== $this->userId) {
-            $res['user_id'] = $this->userId;
-        }
-        if (null !== $this->couponId) {
-            $res['coupon_id'] = $this->couponId;
-        }
-        if (null !== $this->prizeStatus) {
-            $res['prize_status'] = $this->prizeStatus;
-        }
-        if (null !== $this->consumeTime) {
-            $res['consume_time'] = $this->consumeTime;
-        }
-        if (null !== $this->writeOffType) {
-            $res['write_off_type'] = $this->writeOffType;
-        }
-        if (null !== $this->bankFlowNo) {
-            $res['bank_flow_no'] = $this->bankFlowNo;
-        }
-        if (null !== $this->transactionId) {
-            $res['transaction_id'] = $this->transactionId;
-        }
-        if (null !== $this->tradeAmount) {
-            $res['trade_amount'] = $this->tradeAmount;
-        }
-        if (null !== $this->merchantNo) {
-            $res['merchant_no'] = $this->merchantNo;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return GetComsumeJdRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['project_id'])) {
-            $model->projectId = $map['project_id'];
-        }
-        if (isset($map['user_id'])) {
-            $model->userId = $map['user_id'];
-        }
-        if (isset($map['coupon_id'])) {
-            $model->couponId = $map['coupon_id'];
-        }
-        if (isset($map['prize_status'])) {
-            $model->prizeStatus = $map['prize_status'];
-        }
-        if (isset($map['consume_time'])) {
-            $model->consumeTime = $map['consume_time'];
-        }
-        if (isset($map['write_off_type'])) {
-            $model->writeOffType = $map['write_off_type'];
-        }
-        if (isset($map['bank_flow_no'])) {
-            $model->bankFlowNo = $map['bank_flow_no'];
-        }
-        if (isset($map['transaction_id'])) {
-            $model->transactionId = $map['transaction_id'];
-        }
-        if (isset($map['trade_amount'])) {
-            $model->tradeAmount = $map['trade_amount'];
-        }
-        if (isset($map['merchant_no'])) {
-            $model->merchantNo = $map['merchant_no'];
-        }
-
-        return $model;
-    }
 }

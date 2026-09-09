@@ -5,14 +5,12 @@ namespace AntChain\MARKETINGAGENT\Models;
 
 use AlibabaCloud\Tea\Model;
 
-use AntChain\MARKETINGAGENT\Models\Task;
-
-class GetTaskResponse extends Model {
+class QueryTaskCreditResponse extends Model {
     protected $_name = [
         'reqMsgId' => 'req_msg_id',
         'resultCode' => 'result_code',
         'resultMsg' => 'result_msg',
-        'task' => 'task',
+        'credits' => 'credits',
     ];
     public function validate() {}
     public function toMap() {
@@ -26,14 +24,14 @@ class GetTaskResponse extends Model {
         if (null !== $this->resultMsg) {
             $res['result_msg'] = $this->resultMsg;
         }
-        if (null !== $this->task) {
-            $res['task'] = null !== $this->task ? $this->task->toMap() : null;
+        if (null !== $this->credits) {
+            $res['credits'] = $this->credits;
         }
         return $res;
     }
     /**
      * @param array $map
-     * @return GetTaskResponse
+     * @return QueryTaskCreditResponse
      */
     public static function fromMap($map = []) {
         $model = new self();
@@ -46,8 +44,8 @@ class GetTaskResponse extends Model {
         if(isset($map['result_msg'])){
             $model->resultMsg = $map['result_msg'];
         }
-        if(isset($map['task'])){
-            $model->task = Task::fromMap($map['task']);
+        if(isset($map['credits'])){
+            $model->credits = $map['credits'];
         }
         return $model;
     }
@@ -69,10 +67,10 @@ class GetTaskResponse extends Model {
      */
     public $resultMsg;
 
-    // Task is the core unit of action for A2A. It has a current status and when results are created for the task they are stored in the artifact.
+    // credit消耗
     /**
-     * @var Task
+     * @var string
      */
-    public $task;
+    public $credits;
 
 }

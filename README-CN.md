@@ -9,7 +9,7 @@
 ### Composer
 
 ```bash
-composer require antchain/marketingagent
+composer require antchain/MARKETINGAGENT
 ```
 
 ## 问题
